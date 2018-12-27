@@ -1,0 +1,33 @@
+{
+  "name": "@holochain/n-bch-rs",
+  "version": "0.0.1",
+  "description": "nodejs bindings for rust bch reed-solomon library https://crates.io/crates/reed-solomon",
+  "main": "lib/index.js",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holochain/n-bch-rs.git"
+  },
+  "keywords": [
+    "bch",
+    "ecc",
+    "erasure",
+    "erasure coding",
+    "error correction",
+    "parity",
+    "reedsolomon",
+    "reed solomon",
+    "reed-solomon"
+  ],
+  "dependencies": {
+    "neon-cli": "^0.2.0"
+  },
+  "scripts": {
+    "install": "neon build",
+    "test": "mocha lib/*.test.js"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
