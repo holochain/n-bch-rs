@@ -1,18 +1,13 @@
 [package]
 name = "n-bch-rs"
-version = "0.0.1"
+version = "0.0.3"
 authors = ["neonphog <neonphog@gmail.com>"]
 license = "Apache-2.0"
-build = "build.rs"
-exclude = ["artifacts.json", "index.node"]
 
 [lib]
 name = "n_bch_rs"
-crate-type = ["dylib"]
-
-[build-dependencies]
-neon-build = "0.2.0"
+crate-type = ["cdylib"]
 
 [dependencies]
-neon = "0.2.0"
 reed-solomon = "0.2.1"
+wasm-bindgen = "0.2.32"
