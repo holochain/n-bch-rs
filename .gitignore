@@ -1,6 +1,6 @@
-native/target
-native/index.node
-native/artifacts.json
+rust/target
+rust/index.node
+rust/artifacts.json
 **/*~
 **/node_modules
 **/.DS_Store
