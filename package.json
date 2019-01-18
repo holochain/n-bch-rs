@@ -1,6 +1,6 @@
 {
   "name": "@holochain/n-bch-rs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "nodejs bindings for rust bch reed-solomon library https://crates.io/crates/reed-solomon",
   "main": "lib/index.js",
   "license": "Apache-2.0",
