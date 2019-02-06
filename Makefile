@@ -1,8 +1,10 @@
 SHELL		= /bin/bash
 
-.PHONY: all version test build install
+.PHONY: all version test build install clean
 
 all: test
+
+test: build
 
 # On Mac: x86_64-apple-darwin
 #	rustup target add x86_64-apple-darwin
@@ -14,3 +16,5 @@ version:
 build: version
 	cd rust && ( which wasm-bindgen || cargo install --force wasm-bindgen-cli; ./build.sh; )
 
+clean:
+	rm -rf rust/target lib/bindgen_bg.wasm
