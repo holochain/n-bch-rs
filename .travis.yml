@@ -1,0 +1,31 @@
+os:
+  - osx
+  - linux
+
+language: node_js
+
+node_js:
+  - 8
+
+cache: cargo
+
+before_install:
+  # Install Rust and Cargo
+  - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
+  - sh /tmp/rustup.sh -y
+  - export PATH="$HOME/.cargo/bin:$PATH"
+  - source "$HOME/.cargo/env"
+  # Install NPM packages
+  - node -v
+  - npm -v
+  - npm ci
+
+script:
+  # Make sure wasm build didn't change (was committed by dev)
+  - make
+  - git diff-index --quiet HEAD -- lib/bindgen_bg.wasm
+  - git diff-index --quiet HEAD -- lib/bindgen_bg.js
+  - git diff-index --quiet HEAD -- lib/bindgen.js
+  # Node Test Suite
+  - npm test
+
