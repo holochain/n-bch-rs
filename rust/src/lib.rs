@@ -32,6 +32,10 @@ impl Decoder {
         self.0.correct(data, None).unwrap().to_vec()
     }
 
+    pub fn correct_erasures(&self, data: &[u8], erasures: &[u8]) -> Vec<u8> {
+        self.0.correct(data, Some(erasures)).unwrap().to_vec()
+    }
+
     pub fn is_corrupted(&self, data: &[u8]) -> bool {
         self.0.is_corrupted(data)
     }
