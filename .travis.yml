@@ -18,13 +18,15 @@ before_install:
   # Install NPM packages
   - node -v
   - npm -v
-  - npm ci
 
 script:
   # Make sure wasm build didn't change (was committed by dev)
   - make
+  - git diff lib/bindgen_bg.wasm
   - git diff-index --quiet HEAD -- lib/bindgen_bg.wasm
+  - git diff lib/bindgen_bg.js
   - git diff-index --quiet HEAD -- lib/bindgen_bg.js
+  - git diff lib/bindgen.js
   - git diff-index --quiet HEAD -- lib/bindgen.js
   # Node Test Suite
   - npm test
