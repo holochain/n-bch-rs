@@ -9,5 +9,5 @@ name = "n_bch_rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-reed-solomon = "0.2.1"
-wasm-bindgen = "0.2.32"
+reed-solomon = "=0.2.1"
+wasm-bindgen = "=0.2.33"

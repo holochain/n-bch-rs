@@ -12,7 +12,7 @@ test: build
 tools:
 	rustup override set nightly-2019-01-24
 	rustup target add wasm32-unknown-unknown
-	which wasm-bindgen || cargo install --force wasm-bindgen-cli
+	which wasm-bindgen || cargo install --force wasm-bindgen-cli --version "=0.2.33"
 
 build: tools
 	cd rust && cargo build --target wasm32-unknown-unknown --release
